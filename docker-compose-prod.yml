@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    ports:
+      - "80:80"
+  test-app:
+    build: 
+      context: .
+      args:
+        NODE_ENV: production
+    ports: 
+      - '4000:3000'
+    environment:
+      - PORT=3000
+    command: npm start
