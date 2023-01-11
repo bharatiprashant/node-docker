@@ -69,7 +69,7 @@ exports.updatePost = async (req, res, next) => {
 
 exports.deletePost = async (req, res, next) => {
   try {
-    const post = await Post.findByIdAndDelete(req.params.id);
+    await Post.findByIdAndDelete(req.params.id);
 
     res.status(204).json({
       status: "success",
